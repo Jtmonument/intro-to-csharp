@@ -6,7 +6,16 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Overflows
+            byte number = 255;
+            number++; // overflows to 0
+            Console.WriteLine(number);
+
+            checked 
+            {
+                number = 255;
+                number++; // overflows to 0 and throws exception
+            }
         }
     }
 }
