@@ -4,28 +4,49 @@ namespace HelloWorld
 {
     internal class Program
     {
+
+        private enum Method
+        {
+            GET = 1,
+            POST,
+            PUT,
+            DELETE
+        }
+
         static void Main(string[] args)
         {
+            //  6) Enum example
+            var getMethod = Method.GET;
+            Console.WriteLine(getMethod);
+            Console.WriteLine((int)Method.POST);
+
+            var putMethod = 3;
+            Console.WriteLine((Method)putMethod);
+
+            var deleteMethod = "DELETE";
+            var parsed = (Method)Enum.Parse(typeof(Method), deleteMethod);
+            Console.WriteLine((int)parsed);
+
             //  5) String example
-            var person = new Person();
-            person.FirstName = "Jonathan";
-            person.LastName = "Taylor";
-            string name = string.Format("{0} {1}", person.FirstName, person.LastName);
-            Console.WriteLine(name);
+//            var person = new Person();
+//            person.FirstName = "Jonathan";
+//            person.LastName = "Taylor";
+//            string name = string.Format("{0} {1}", person.FirstName, person.LastName);
+//            Console.WriteLine(name);
 
-            var clangs = new string[] {"C", "C++", "C#"};
-            string strLangs = string.Join(", ", clangs);
-            Console.WriteLine(strLangs);
+//            var clangs = new string[] {"C", "C++", "C#"};
+//            string strLangs = string.Join(", ", clangs);
+//            Console.WriteLine(strLangs);
 
-            Console.WriteLine("Hello"[0]);
+//            Console.WriteLine("Hello"[0]);
 
-            Console.WriteLine("C:\\Users\\jonta\\source\\repos\\HelloWorld\\Program.cs");
-            Console.WriteLine(@"C:\Users\jonta\source\repos\HelloWorld\Program.cs");
+//            Console.WriteLine("C:\\Users\\jonta\\source\\repos\\HelloWorld\\Program.cs");
+//            Console.WriteLine(@"C:\Users\jonta\source\repos\HelloWorld\Program.cs");
 
-            String lotsOfLines = @"1
-2
-3";
-            Console.WriteLine(lotsOfLines);
+//            String lotsOfLines = @"1
+//2
+//3";
+//            Console.WriteLine(lotsOfLines);
 
 
             //  4) Class example
