@@ -15,17 +15,26 @@ namespace HelloWorld
 
         static void Main(string[] args)
         {
+            //  7) Reference type example
+            Person person = new Person();
+            Person personRef = person;
+            personRef.FirstName = "John";
+            personRef.LastName = "Doe";
+            person.Introduce();
+
+
             //  6) Enum example
-            var getMethod = Method.GET;
-            Console.WriteLine(getMethod);
-            Console.WriteLine((int)Method.POST);
+            //var getMethod = Method.GET;
+            //Console.WriteLine(getMethod);
+            //Console.WriteLine((int)Method.POST);
 
-            var putMethod = 3;
-            Console.WriteLine((Method)putMethod);
+            //var putMethod = 3;
+            //Console.WriteLine((Method)putMethod);
 
-            var deleteMethod = "DELETE";
-            var parsed = (Method)Enum.Parse(typeof(Method), deleteMethod);
-            Console.WriteLine((int)parsed);
+            //var deleteMethod = "DELETE";
+            //var parsed = (Method)Enum.Parse(typeof(Method), deleteMethod);
+            //Console.WriteLine((int)parsed);
+
 
             //  5) String example
 //            var person = new Person();
