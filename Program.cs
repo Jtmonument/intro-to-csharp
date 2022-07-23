@@ -16,24 +16,42 @@ namespace HelloWorld
 
         static void Main(string[] args)
         {
-            // 10) Dates example
-            var date = new DateTime(2022, 1, 1);
-            Console.WriteLine(date); // 1/1/2022 12:00:00 AM
-            var now = DateTime.Now;
-            var today = DateTime.Today;
-            Console.WriteLine(now);
-            Console.WriteLine(now.Day);
-            Console.WriteLine(now.Minute);
-            var tomorrow = now.AddDays(1);
-            var yesterday = now.AddDays(-1);
-            Console.WriteLine(tomorrow);
-            Console.WriteLine(yesterday);
+            // 11) TimeSpan example
+            var timeSpan = new TimeSpan(1, 2, 3);
+            var hour = TimeSpan.FromHours(1);
 
-            Console.WriteLine(now.ToLongDateString()); // Day, Month, dd, yyyy
-            Console.WriteLine(now.ToShortDateString()); // MM/dd/yyyy
-            Console.WriteLine(now.ToLongTimeString()); // hh:mm:ss AM/PM
-            Console.WriteLine(now.ToShortTimeString()); // hh:mm AM/PM
-            Console.WriteLine(now.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'"));
+            var startTime = DateTime.Now;
+            var endTime = DateTime.Now;
+            Console.WriteLine("Duration: {0} ms", (endTime - startTime).TotalMilliseconds);
+
+            Console.WriteLine("Minutes: {0}", timeSpan.Minutes);
+            Console.WriteLine("Total Minutes: {0}", timeSpan.TotalMinutes);
+
+            Console.WriteLine(timeSpan.Add(TimeSpan.FromDays(7)));
+            Console.WriteLine(timeSpan.Subtract(TimeSpan.FromDays(7)));
+
+            Console.WriteLine("Parse: {0}", TimeSpan.Parse("14:00:00"));
+            Console.WriteLine("Parse: {0}", DateTime.Parse("2020-01-01T14:00:00Z"));
+
+
+            // 10) Dates example
+            //var date = new DateTime(2022, 1, 1);
+            //Console.WriteLine(date); // 1/1/2022 12:00:00 AM
+            //var now = DateTime.Now;
+            //var today = DateTime.Today;
+            //Console.WriteLine(now);
+            //Console.WriteLine(now.Day);
+            //Console.WriteLine(now.Minute);
+            //var tomorrow = now.AddDays(1);
+            //var yesterday = now.AddDays(-1);
+            //Console.WriteLine(tomorrow);
+            //Console.WriteLine(yesterday);
+
+            //Console.WriteLine(now.ToLongDateString()); // Day, Month, dd, yyyy
+            //Console.WriteLine(now.ToShortDateString()); // MM/dd/yyyy
+            //Console.WriteLine(now.ToLongTimeString()); // hh:mm:ss AM/PM
+            //Console.WriteLine(now.ToShortTimeString()); // hh:mm AM/PM
+            //Console.WriteLine(now.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'"));
 
 
             //  9) List example
