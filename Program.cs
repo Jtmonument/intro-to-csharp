@@ -16,14 +16,34 @@ namespace HelloWorld
 
         static void Main(string[] args)
         {
+            // 10) Dates example
+            var date = new DateTime(2022, 1, 1);
+            Console.WriteLine(date); // 1/1/2022 12:00:00 AM
+            var now = DateTime.Now;
+            var today = DateTime.Today;
+            Console.WriteLine(now);
+            Console.WriteLine(now.Day);
+            Console.WriteLine(now.Minute);
+            var tomorrow = now.AddDays(1);
+            var yesterday = now.AddDays(-1);
+            Console.WriteLine(tomorrow);
+            Console.WriteLine(yesterday);
+
+            Console.WriteLine(now.ToLongDateString()); // Day, Month, dd, yyyy
+            Console.WriteLine(now.ToShortDateString()); // MM/dd/yyyy
+            Console.WriteLine(now.ToLongTimeString()); // hh:mm:ss AM/PM
+            Console.WriteLine(now.ToShortTimeString()); // hh:mm AM/PM
+            Console.WriteLine(now.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'"));
+
+
             //  9) List example
-            var list = new List<int>() { 1, 2, 3};
-            list.Add(4);
-            list.AddRange(new[] { 5, 2, 7});
-            Console.WriteLine(list.IndexOf(5));
-            Console.WriteLine(list.LastIndexOf(2));
-            list.Remove(7);
-            Console.WriteLine(list.Count);
+            //var list = new List<int>() { 1, 2, 3};
+            //list.Add(4);
+            //list.AddRange(new[] { 5, 2, 7});
+            //Console.WriteLine(list.IndexOf(5));
+            //Console.WriteLine(list.LastIndexOf(2));
+            //list.Remove(7);
+            //Console.WriteLine(list.Count);
 
 
             //  8) Arrays example
