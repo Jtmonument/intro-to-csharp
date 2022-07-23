@@ -6,16 +6,18 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            // Overflows
-            byte number = 255;
-            number++; // overflows to 0
-            Console.WriteLine(number);
+            //  2) Format String example
+            Console.WriteLine("{0} {1}", byte.MinValue, byte.MaxValue);
+            // 1) Overflow example
+            //byte number = 255;
+            //number++; // overflows to 0
+            //Console.WriteLine(number);
 
-            checked 
-            {
-                number = 255;
-                number++; // overflows to 0 and throws exception
-            }
+            //checked 
+            //{
+            //    number = 255;
+            //    number++; // overflows to 0 and throws exception
+            //}
         }
     }
 }
