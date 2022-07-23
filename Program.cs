@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace HelloWorld
 {
@@ -15,43 +16,53 @@ namespace HelloWorld
 
         static void Main(string[] args)
         {
+            //  9) List example
+            var list = new List<int>() { 1, 2, 3};
+            list.Add(4);
+            list.AddRange(new[] { 5, 2, 7});
+            Console.WriteLine(list.IndexOf(5));
+            Console.WriteLine(list.LastIndexOf(2));
+            list.Remove(7);
+            Console.WriteLine(list.Count);
+
+
             //  8) Arrays example
-            int[][] jaggedArray = new int[3][]; // Jagged Array
-            int[,] multidimensionalArray = new int[3, 3]; // Multidimensional Array
-            var shortHand = new[] { 5, 4, 3, 1, 2 }; // Shorthand way to create an array
-            Console.WriteLine(shortHand.Length); // Length of Array
-            Console.WriteLine(Array.IndexOf(shortHand, 3)); //  Index of Element in Array
+            //int[][] jaggedArray = new int[3][]; // Jagged Array
+            //int[,] multidimensionalArray = new int[3, 3]; // Multidimensional Array
+            //var shortHand = new[] { 5, 4, 3, 1, 2 }; // Shorthand way to create an array
+            //Console.WriteLine(shortHand.Length); // Length of Array
+            //Console.WriteLine(Array.IndexOf(shortHand, 3)); //  Index of Element in Array
 
-            Console.WriteLine("Array.Clear(shortHand, 0, 1)");
-            Array.Clear(shortHand, 0, 1);
-            foreach (var num in shortHand)
-            {
-                Console.Write(num + " ");
-            }
-            shortHand[0] = 5;
+            //Console.WriteLine("Array.Clear(shortHand, 0, 1)");
+            //Array.Clear(shortHand, 0, 1);
+            //foreach (var num in shortHand)
+            //{
+            //    Console.Write(num + " ");
+            //}
+            //shortHand[0] = 5;
 
-            Console.WriteLine("\nArray.Sort()");
-            Array.Sort(shortHand);
-            foreach (int num in shortHand)
-            {
-                Console.Write(num + " ");
-            }
+            //Console.WriteLine("\nArray.Sort()");
+            //Array.Sort(shortHand);
+            //foreach (int num in shortHand)
+            //{
+            //    Console.Write(num + " ");
+            //}
 
-            int[] copy = new int[3];
-            Array.Copy(shortHand, copy, 3);
+            //int[] copy = new int[3];
+            //Array.Copy(shortHand, copy, 3);
 
-            Console.WriteLine("\nArray.Copy(shortHand, copy, 3)");
-            foreach (int num in copy)
-            {
-                Console.Write(num + " ");
-            }
+            //Console.WriteLine("\nArray.Copy(shortHand, copy, 3)");
+            //foreach (int num in copy)
+            //{
+            //    Console.Write(num + " ");
+            //}
 
-            Console.WriteLine("\nArray.Clear(shortHand, 0, shortHand.Length)");
-            Array.Clear(shortHand, 0, shortHand.Length);
-            foreach (int num in shortHand)
-            {
-                Console.Write(num + " ");
-            }
+            //Console.WriteLine("\nArray.Clear(shortHand, 0, shortHand.Length)");
+            //Array.Clear(shortHand, 0, shortHand.Length);
+            //foreach (int num in shortHand)
+            //{
+            //    Console.Write(num + " ");
+            //}
 
 
             //  7) Reference type example
