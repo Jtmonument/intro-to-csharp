@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace HelloWorld
 {
@@ -16,22 +17,59 @@ namespace HelloWorld
 
         static void Main(string[] args)
         {
+            // 12) Files example
+            string file = "temp.txt";
+            if (!File.Exists(file))
+            {
+                File.Create(file).Close();
+            }
+            var content = File.ReadAllText(@"HelloWorld.runtimeconfig.json");
+            File.WriteAllText(file, content);
+            Console.WriteLine(content);
+            Directory.CreateDirectory("temp");
+            File.Copy(file, @".\temp\temp.txt", true);
+            var fileInfo = new FileInfo(file);
+            Console.WriteLine(fileInfo.FullName);
+            Console.Write("Check bin path for files...");
+            Console.ReadKey();
+            Console.WriteLine();
+            File.Delete(file);
+            Directory.Delete(@".\temp\", true);
+
+            var files = Directory.GetFiles(".", "*.*", SearchOption.AllDirectories);
+            foreach (var dir in files)
+            {
+                Console.WriteLine(dir);
+            }
+
+            var directories = new DirectoryInfo("../");
+            foreach (var dir in directories.GetDirectories())
+            {
+                Console.WriteLine(dir);
+            }
+            foreach (var dir in directories.GetFiles())
+            {
+                Console.WriteLine(dir);
+            }
+            Console.WriteLine(Path.GetExtension("HelloWorld.exe"));
+
+
             // 11) TimeSpan example
-            var timeSpan = new TimeSpan(1, 2, 3);
-            var hour = TimeSpan.FromHours(1);
+            //var timeSpan = new TimeSpan(1, 2, 3);
+            //var hour = TimeSpan.FromHours(1);
 
-            var startTime = DateTime.Now;
-            var endTime = DateTime.Now;
-            Console.WriteLine("Duration: {0} ms", (endTime - startTime).TotalMilliseconds);
+            //var startTime = DateTime.Now;
+            //var endTime = DateTime.Now;
+            //Console.WriteLine("Duration: {0} ms", (endTime - startTime).TotalMilliseconds);
 
-            Console.WriteLine("Minutes: {0}", timeSpan.Minutes);
-            Console.WriteLine("Total Minutes: {0}", timeSpan.TotalMinutes);
+            //Console.WriteLine("Minutes: {0}", timeSpan.Minutes);
+            //Console.WriteLine("Total Minutes: {0}", timeSpan.TotalMinutes);
 
-            Console.WriteLine(timeSpan.Add(TimeSpan.FromDays(7)));
-            Console.WriteLine(timeSpan.Subtract(TimeSpan.FromDays(7)));
+            //Console.WriteLine(timeSpan.Add(TimeSpan.FromDays(7)));
+            //Console.WriteLine(timeSpan.Subtract(TimeSpan.FromDays(7)));
 
-            Console.WriteLine("Parse: {0}", TimeSpan.Parse("14:00:00"));
-            Console.WriteLine("Parse: {0}", DateTime.Parse("2020-01-01T14:00:00Z"));
+            //Console.WriteLine("Parse: {0}", TimeSpan.Parse("14:00:00"));
+            //Console.WriteLine("Parse: {0}", DateTime.Parse("2020-01-01T14:00:00Z"));
 
 
             // 10) Dates example
